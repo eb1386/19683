@@ -530,6 +530,7 @@ hr {
     font-size: 23.5px;
     border: none; /* Remove any default browser styles */
     cursor: pointer; /* Change cursor to indicate it's clickable */
+    float: right
 }
 
 .dark-mode-toggle {
@@ -545,6 +546,7 @@ hr {
     font-size: 23.5px;
     border: none; /* Remove any default browser styles */
     cursor: pointer; /* Change cursor to indicate it's clickable */
+    float:left
 }
 
   .undo-button {
