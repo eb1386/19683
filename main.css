@@ -546,8 +546,8 @@ hr {
 
 .undo-button {
     position: relative;
-    left: 11%; /* Move the left edge of the button to the center of the container */
-    transform: translateX(-50%); /* Shift the button back to the left by half its width */
+    left: 11%;
+    transform: translateX(-50%);
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -561,24 +561,22 @@ hr {
 }
 
 .undo-button.disabled {
-    opacity: 0.5; /* makes the button look faded */
-    pointer-events: none; /* disables click events on the button */
-    cursor: default; /* changes the cursor to indicate it's not clickable */
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
 }
 
 /* Media query for smaller screens (phones) */
 @media screen and (max-width: 768px) {
     .restart-button, .dark-mode-toggle, .undo-button {
-        display: block; /* Stack the buttons */
-        width: auto; /* Adjust width */
-        margin: 10px auto; /* Center buttons with margin */
-        float: none; /* Disable floating */
+        padding: 0 10px; /* Reduced padding */
+        font-size: 18px; /* Smaller font size */
     }
 
     .undo-button {
-        position: static; /* Reset the position */
-        left: auto; /* Reset the left positioning */
-        transform: none; /* Remove the transform */
+        position: static;
+        left: auto;
+        transform: none;
     }
 }
 
