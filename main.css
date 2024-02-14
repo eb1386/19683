@@ -544,10 +544,11 @@ hr {
     font-size: 23.5px;
 }
 
-.undo-button {
+ .undo-button {
     position: relative;
-    left: 11%;
-    transform: translateX(-50%);
+    left: 11%; 
+    transform: translateX(-50%); 
+  
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -558,8 +559,7 @@ hr {
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
-}
-
+  }
 .undo-button.disabled {
     opacity: 0.5;
     pointer-events: none;
