@@ -517,7 +517,7 @@ hr {
   line-height: 42px;
   margin-bottom: 0; }
 
-  .restart-button {
+.restart-button {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -529,10 +529,9 @@ hr {
     text-align: center;
     float: right;
     font-size: 23.5px;
-  }  
+}
 
-
-  .dark-mode-toggle {
+.dark-mode-toggle {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -543,13 +542,12 @@ hr {
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
-  }
+}
 
-  .undo-button {
+.undo-button {
     position: relative;
     left: 11%; /* Move the left edge of the button to the center of the container */
     transform: translateX(-50%); /* Shift the button back to the left by half its width */
-  
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -560,14 +558,30 @@ hr {
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
-  }
-  
-  .undo-button.disabled {
+}
+
+.undo-button.disabled {
     opacity: 0.5; /* makes the button look faded */
     pointer-events: none; /* disables click events on the button */
     cursor: default; /* changes the cursor to indicate it's not clickable */
-  }
-  
+}
+
+/* Media query for smaller screens (phones) */
+@media screen and (max-width: 768px) {
+    .restart-button, .dark-mode-toggle, .undo-button {
+        display: block; /* Stack the buttons */
+        width: auto; /* Adjust width */
+        margin: 10px auto; /* Center buttons with margin */
+        float: none; /* Disable floating */
+    }
+
+    .undo-button {
+        position: static; /* Reset the position */
+        left: auto; /* Reset the left positioning */
+        transform: none; /* Remove the transform */
+    }
+}
+
 
 .game-explanation {
   margin-top: 50px; }
