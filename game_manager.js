@@ -210,7 +210,7 @@ GameManager.prototype.undo = function () {
     this.stateHistory.pop();
 
     
-    var previousState = this.stateHistory[this.stateHistory.length - 1];
+    var previousState = this.stateHistory[this.stateHistory.length];
 
     
     this.grid = new Grid(previousState.grid.size, previousState.grid.cells);
