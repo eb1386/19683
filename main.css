@@ -516,7 +516,8 @@ hr {
   float: left;
   line-height: 42px;
   margin-bottom: 0; }
- .restart-button {
+
+  .restart-button {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -566,7 +567,6 @@ hr {
     pointer-events: none; /* disables click events on the button */
     cursor: default; /* changes the cursor to indicate it's not clickable */
   }
-  
   
 
 .game-explanation {
@@ -905,6 +905,4 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
-
 
