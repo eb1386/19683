@@ -517,11 +517,15 @@ hr {
   line-height: 42px;
   margin-bottom: 0; }
 
-restart-button {
+  .restart-button {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
-	@@ -529,10 +529,9 @@ hr {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
     text-align: center;
     float: right;
     font-size: 23.5px;
@@ -532,7 +536,10 @@ restart-button {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
-	@@ -543,13 +542,12 @@ hr {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
@@ -542,11 +549,14 @@ restart-button {
     position: relative;
     left: 11%; /* Move the left edge of the button to the center of the container */
     transform: translateX(-50%); /* Shift the button back to the left by half its width */
-
+  
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
-	@@ -560,14 +558,30 @@ hr {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
@@ -557,6 +567,8 @@ restart-button {
     pointer-events: none; /* disables click events on the button */
     cursor: default; /* changes the cursor to indicate it's not clickable */
   }
+  
+
 .game-explanation {
   margin-top: 50px; }
 
