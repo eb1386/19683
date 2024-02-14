@@ -530,7 +530,7 @@ hr {
     font-size: 23.5px;
     border: none; /* Remove any default browser styles */
     cursor: pointer; /* Change cursor to indicate it's clickable */
-    float: right
+    float: right; /* Right align */
 }
 
 .dark-mode-toggle {
@@ -546,14 +546,10 @@ hr {
     font-size: 23.5px;
     border: none; /* Remove any default browser styles */
     cursor: pointer; /* Change cursor to indicate it's clickable */
-    float:left
+    float: left; /* Left align */
 }
 
-  .undo-button {
-    position: relative;
-    left: 11%; /* Move the left edge of the button to the center of the container */
-    transform: translateX(-50%); /* Shift the button back to the left by half its width */
-  
+.undo-button {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
@@ -564,13 +560,24 @@ hr {
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
-  }
-  
-  .undo-button.disabled {
-    opacity: 0.5; /* makes the button look faded */
-    pointer-events: none; /* disables click events on the button */
-    cursor: default; /* changes the cursor to indicate it's not clickable */
-  }
+    position: absolute; /* Use absolute positioning */
+    left: 50%; /* Position at 50% of parent element */
+    transform: translateX(-50%); /* Adjust to truly center */
+}
+
+.undo-button.disabled {
+    opacity: 0.5; /* Makes the button look faded */
+    pointer-events: none; /* Disables click events on the button */
+    cursor: default; /* Changes the cursor to indicate it's not clickable */
+}
+
+/* Container for the buttons */
+.buttons-container {
+    position: relative; /* Relative position for absolute children */
+    text-align: center; /* Center align for inline elements */
+    /* Ensure the container has a specified width, or is controlled by its parent's width */
+}
+
   
 
 .game-explanation {
