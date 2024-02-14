@@ -566,20 +566,19 @@ hr {
     cursor: default;
 }
 
-/* Media query for smaller screens (phones) */
-@media screen and (max-width: 768px) {
-    .restart-button, .dark-mode-toggle, .undo-button {
-        padding: 0 10px; /* Reduced padding */
-        font-size: 18px; /* Smaller font size */
-    }
+@media screen and (max-width: 280px) {
+  .restart-button, .dark-mode-toggle, .undo-button {
+    padding: 0 5px; /* Reduce padding */
+    font-size: 12px; /* Reduce font size to fit in the narrow slot */
+    margin: 0 1px; /* Minimize margin between buttons */
+    width: auto; /* Adjust width automatically */
+  }
 
-    .undo-button {
-        position: static;
-        left: auto;
-        transform: none;
-    }
-}
-
+  .undo-button {
+    position: static;
+    left: auto;
+    transform: none;
+  }
 
 .game-explanation {
   margin-top: 50px; }
