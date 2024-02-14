@@ -544,7 +544,7 @@ hr {
     font-size: 23.5px;
 }
 
-.-button {
+.undo-button {
     position: relative;
     left: 11%;
     transform: translateX(-50%);
