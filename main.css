@@ -562,12 +562,21 @@ hr {
     text-align: center;
     font-size: 23.5px;
   }
+
+@media screen and (max-width: 520px) {
+    .restart-button, .dark-mode-toggle, .undo-button {
+        font-size: 16px; /* Even smaller font size for smaller screens */
+        padding: 0 10px;
+    }
+}
+
   
   .undo-button.disabled {
     opacity: 0.5; /* makes the button look faded */
     pointer-events: none; /* disables click events on the button */
     cursor: default; /* changes the cursor to indicate it's not clickable */
   }
+
 
 .game-explanation {
   margin-top: 50px; }
