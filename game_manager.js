@@ -113,7 +113,10 @@ GameManager.prototype.actuate = function () {
     
     this.actuate();
     
-    document.querySelector(".undo-button").classList.add("disabled");
+    if (this.pastStates.length > 1) {
+      document.querySelector(".undo-button").classList.remove("disabled");
+    } else {
+      document.querySelector(".undo-button").classList.add("disabled");
     }
   };
   
