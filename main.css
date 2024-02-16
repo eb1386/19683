@@ -563,14 +563,12 @@ hr {
     font-size: 23.5px;
   }
 
-
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 480px) {
     .restart-button, .dark-mode-toggle, .undo-button {
-        font-size: 10px; /* Reduced font size for mobile */
-        padding: 0 8px; /* Adjust padding if necessary */
+        font-size: 7px; /* Reduced font size for mobile */
     }
 }
-  
+
   .undo-button.disabled {
     opacity: 0.5; /* makes the button look faded */
     pointer-events: none; /* disables click events on the button */
