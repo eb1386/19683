@@ -527,8 +527,8 @@ hr {
     height: 40px;
     line-height: 42px;
     text-align: center;
-    font-size: 23.5px;
     float: right;
+    font-size: 23.5px;
   }  
 
 
@@ -543,7 +543,7 @@ hr {
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
-    float: left;
+    float:left;
   }
 
   .undo-button {
@@ -566,6 +566,16 @@ hr {
 @media screen and (max-width: 480px) {
     .restart-button, .dark-mode-toggle, .undo-button {
         font-size: 7px; /* Reduced font size for mobile */
+        display: inline-block;
+        background: #8f7a66;
+        border-radius: 3px;
+        padding: 0 20px;
+        text-decoration: none;
+        color: #f9f6f2;
+        height: 40px;
+        line-height: 42px;
+        text-align: center;
+        font-size: 23.5px;     
     }
 }
 
