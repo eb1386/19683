@@ -517,6 +517,13 @@ hr {
   line-height: 42px;
   margin-bottom: 0; }
 
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 .restart-button {
     display: inline-block;
     background: #8f7a66;
