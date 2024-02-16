@@ -519,6 +519,15 @@ hr {
   text-align: center;
 }
 
+@media screen and (max-width: 520px) {
+    .game-intro {
+        /* Adjust font size, margins, and other properties for mobile */
+        font-size: 14px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
   .restart-button {
     display: inline-block;
     background: #8f7a66;
