@@ -566,7 +566,7 @@ hr {
 
 @media screen and (max-width: 480px) {
     .restart-button, .dark-mode-toggle, .undo-button {
-        font-size: 14px; /* Reduced font size for mobile */
+        font-size: 12px; /* Reduced font size for mobile */
         padding: 0 10px; /* Adjust padding if necessary */
     }
 }
