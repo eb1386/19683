@@ -534,21 +534,7 @@ hr {
     }
 }
 
-  .restart-button {
-    display: inline-block;
-    background: #8f7a66;
-    border-radius: 3px;
-    padding: 0 20px;
-    text-decoration: none;
-    color: #f9f6f2;
-    height: 40px;
-    line-height: 42px;
-    text-align: center;
-    float: right;
-    font-size: 23.5px;
-  }  
-
-
+ 
   .dark-mode-toggle {
     display: inline-block;
     background: #8f7a66;
@@ -560,7 +546,6 @@ hr {
     line-height: 42px;
     text-align: center;
     font-size: 23.5px;
-    float:left;
   }
 
   .undo-button {
@@ -579,36 +564,29 @@ hr {
     text-align: center;
     font-size: 23.5px;
   }
-
-@media screen and (max-width: 480px) {
-  .game-intro {
-    /* Adjust font size and other properties as needed */
-    font-size: 14px;
-  }
-
-  .restart-button, .dark-mode-toggle, .undo-button {
-    font-size: 14px;
-    padding: 0 10px;
-    margin: 0 5px; /* Reduce margin to prevent bunching */
-    min-width: 70px; /* Optional: prevent buttons from getting too small */
-  }
-
-  .buttons-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .restart-button, .dark-mode-toggle, .undo-button {
-    width: auto; /* Allows the button to expand to fill the container */
-    margin-bottom: 5px; /* Adds space between stacked buttons */
+  
+  @media screen and (max-width: 520px) {
+    .undo-button, .dark-mode-toggle, .restart-button {
+    display: inline-block;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 10px; 
   }
 }
-
+  
   .undo-button.disabled {
     opacity: 0.5; /* makes the button look faded */
     pointer-events: none; /* disables click events on the button */
     cursor: default; /* changes the cursor to indicate it's not clickable */
   }
+  
+
   
 
 .game-explanation {
