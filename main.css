@@ -535,7 +535,7 @@ hr {
   display: inline-block;
   background: #8f7a66; /* Button background color */
   border-radius: 3px; /* Rounded corners */
-  padding: 0 20px; /* Padding inside the button */
+  padding: 0 10px; /* Padding inside the button */
   text-decoration: none; /* Remove underline */
   color: #f9f6f2; /* Text color */
   height: 40px; /* Button height */
@@ -549,7 +549,7 @@ hr {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
-    padding: 0 20px;
+    padding: 0 10px;
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
@@ -566,7 +566,7 @@ hr {
     display: inline-block;
     background: #8f7a66;
     border-radius: 3px;
-    padding: 0 20px;
+    padding: 0 10px;
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
