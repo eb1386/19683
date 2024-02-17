@@ -513,26 +513,24 @@ hr {
   clear: both; }
 
 .game-intro {
-  float: center;
-  line-height: 42px;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: 200;
+  width: 100%; /* Set the width to take up 100% of its container */
+  margin: 0; /* Reset any margins */
+  padding: 0; /* Adjust padding as needed */
+  text-align: center; /* Center the text */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .game-intro strong {
     font-weight: bold; /* ensures <strong> tags remain bold */
 }
-
 @media screen and (max-width: 520px) {
-    .game-intro {
-      float: center;
-      line-height: 42px;
-      margin-bottom: 0;
-      text-align: center;
-      font-size: 14px;
-    }
-}
+  .game-intro {
+    width: 100%; /* This will make the game intro take up the full width */
+    margin: 0 auto; /* Center the div if necessary */
+    padding: 0; /* Adjust padding to ensure text does not touch the sides */
+    box-sizing: border-box; /* Makes sure padding is included in the width */
+  }
+  
 .restart-button {
   display: inline-block;
   background: #8f7a66; /* Button background color */
@@ -597,6 +595,7 @@ hr {
     pointer-events: none; /* disables click events on the button */
     cursor: default; /* changes the cursor to indicate it's not clickable */
   }
+  
   
 
   
