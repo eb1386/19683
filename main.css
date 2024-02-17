@@ -507,95 +507,63 @@ hr {
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
 
-.above-game:after {
-  content: "";
-  display: block;
-  clear: both; }
+/* Remove the float and use flexbox for better control */
+.above-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
 .game-intro {
-  width: 100%; /* Set the width to take up 100% of its container */
-  margin: 0; /* Reset any margins */
-  padding: 0; /* Adjust padding as needed */
-  text-align: center; /* Center the text */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
+  margin: 0;
+  padding: 0 15px; /* You can adjust the left and right padding to ensure the text does not touch the sides */
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 18px; /* Adjust the font size if necessary */
 }
 
-.game-intro strong {
-    font-weight: bold; /* ensures <strong> tags remain bold */
+/* Apply flexbox to the container of the buttons */
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 15px; /* This will ensure padding on the sides */
 }
+
+.dark-mode-toggle, .undo-button, .restart-button {
+  flex-grow: 1; /* Buttons will grow to fill the space */
+  margin: 8px; /* This will ensure space between buttons */
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  text-align: center;
+  font-size: 23.5px;
+  box-sizing: border-box;
+}
+
+.undo-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Media query for smaller screens */
 @media screen and (max-width: 520px) {
   .game-intro {
-    width: 100%; /* This will make the game intro take up the full width */
-    margin: 0 auto; /* Center the div if necessary */
-    padding: 0; /* Adjust padding to ensure text does not touch the sides */
-    box-sizing: border-box; /* Makes sure padding is included in the width */
+    padding: 0 10px; 
+    font-size: 14px; 
   }
-  
-.restart-button {
-  display: inline-block;
-  background: #8f7a66; /* Button background color */
-  border-radius: 3px; /* Rounded corners */
-  padding: 0 10px; /* Padding inside the button */
-  text-decoration: none; /* Remove underline */
-  color: #f9f6f2; /* Text color */
-  height: 40px; /* Button height */
-  line-height: 42px; /* Center the text vertically */
-  text-align: center; /* Center the text horizontally */
-  font-size: 23.5px; /* Text size */
-  float: right; 
-}
- 
-  .dark-mode-toggle {
-    display: inline-block;
-    background: #8f7a66;
-    border-radius: 3px;
-    padding: 0 10px;
-    text-decoration: none;
-    color: #f9f6f2;
-    height: 40px;
-    line-height: 42px;
-    text-align: center;
-    font-size: 23.5px;
-  }
-
-  .undo-button {
-    position: relative;
-    left: 10.9%; 
-    transform: translateX(-50%); 
-  
-    display: inline-block;
-    background: #8f7a66;
-    border-radius: 3px;
-    padding: 0 10px;
-    text-decoration: none;
-    color: #f9f6f2;
-    height: 40px;
-    line-height: 42px;
-    text-align: center;
-    font-size: 23.5px;
-  }
-  
-  @media screen and (max-width: 520px) {
-    .undo-button, .dark-mode-toggle, .restart-button {
-    display: inline-block;
-    background: #8f7a66;
-    border-radius: 3px;
-    padding: 0 10px;
-    text-decoration: none;
-    color: #f9f6f2;
-    height: 40px;
-    line-height: 42px;
-    text-align: center;
-    font-size: 13.48px; 
-      
+    .dark-mode-toggle, .undo-button, .restart-button {
+    font-size: 12px; /* Larger font size for better readability */
+    flex-grow: 1;
   }
 }
-  
-  .undo-button.disabled {
-    opacity: 0.5; /* makes the button look faded */
-    pointer-events: none; /* disables click events on the button */
-    cursor: default; /* changes the cursor to indicate it's not clickable */
-  }
   
   
 
