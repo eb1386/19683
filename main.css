@@ -562,8 +562,8 @@ restart-button {
 
   .undo-button {
     position: relative;
-    left: 11%; /* Move the left edge of the button to the center of the container */
-    transform: translateX(-50%); /* Shift the button back to the left by half its width */
+    left: 11.5%; 
+    transform: translateX(-50%); 
   
     display: inline-block;
     background: #8f7a66;
