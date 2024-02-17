@@ -543,8 +543,8 @@ restart-button {
     height: 40px;
     line-height: 42px;
     text-align: center;
+    font-size: 23.5px; 
     float: right;
-    font-size: 23.5px;
   }  
  
   .dark-mode-toggle {
@@ -588,7 +588,7 @@ restart-button {
     height: 40px;
     line-height: 42px;
     text-align: center;
-    font-size: 8px; 
+    font-size: 10px; 
   }
 }
   
