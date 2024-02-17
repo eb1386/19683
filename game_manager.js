@@ -12,8 +12,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
   this.setup();
 }
-
-GameManager.prototype.pastStates = [];
+this.stateHistory = [];
+this.undoUsed = false; 
 
 GameManager.prototype.restart = function () {
   this.storageManager.clearGameState();
@@ -35,6 +35,11 @@ GameManager.prototype.isGameTerminated = function () {
 
 GameManager.prototype.setup = function () {
   var previousState = this.storageManager.getGameState();
+  this.stateHistory = [];
+  var undoButton = document.querySelector(".undo-button");
+  if (undoButton) undoButton.classList.remove("disabled");
+
+  this.undoUsed = false;
 
   
   if (previousState) {
@@ -57,7 +62,6 @@ GameManager.prototype.setup = function () {
 
   
   this.actuate();
-  this.savePastState();
 };
 
 
@@ -67,12 +71,6 @@ GameManager.prototype.addStartTiles = function () {
   }
 };
 
-GameManager.prototype.savePastState = function () {
-  this.pastStates.push(this.serialize());
-  if (this.pastStates.length > 10) { 
-    this.pastStates.shift();
-  }
-}
 
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
@@ -87,38 +85,8 @@ GameManager.prototype.addRandomTile = function () {
 GameManager.prototype.actuate = function () {
   if (this.storageManager.getBestScore() < this.score) {
     this.storageManager.setBestScore(this.score);
-    this.actuator.updateUndoButton(this.pastStates.length > 1);
   }
 
-  GameManager.prototype.undo = function () {
-    
-    if (this.pastStates.length < 2) {
-      
-      document.querySelector(".undo-button").classList.add("disabled");
-      return;
-    }
-  
-    
-    this.pastStates.pop();
-    
-    var prevState = this.pastStates.pop();
-  
-    
-    this.grid        = new Grid(prevState.grid.size, prevState.grid.cells);
-    this.score       = prevState.score;
-    this.over        = prevState.over;
-    this.won         = prevState.won;
-    this.keepPlaying = prevState.keepPlaying;
-  
-    
-    this.actuate();
-    
-    if (this.pastStates.length > 1) {
-      document.querySelector(".undo-button").classList.remove("disabled");
-    } else {
-      document.querySelector(".undo-button").classList.add("disabled");
-    }
-  };
   
   if (this.over) {
     this.storageManager.clearGameState();
@@ -166,12 +134,11 @@ GameManager.prototype.moveTile = function (tile, cell) {
 
 
 GameManager.prototype.move = function (direction) {
-
-   this.savePastState();
   
   var self = this;
 
   if (this.isGameTerminated()) return; 
+  this.saveState();
 
   var cell, tile;
 
@@ -179,6 +146,7 @@ GameManager.prototype.move = function (direction) {
   var traversals = this.buildTraversals(vector);
   var moved      = false;
 
+  
   this.prepareTiles();
 
   
@@ -225,9 +193,37 @@ GameManager.prototype.move = function (direction) {
       this.over = true; 
     }
 
-    document.querySelector(".undo-button").classList.remove("disabled");
-
     this.actuate();
+  }
+};
+
+GameManager.prototype.saveState = function () {
+  this.stateHistory.push(this.serialize()); 
+  if (this.stateHistory.length > 10) { 
+    this.stateHistory.shift(); 
+  }
+};
+
+GameManager.prototype.undo = function () {
+  if (this.stateHistory.length > 1 && !this.undoUsed) {
+    
+    this.stateHistory.pop();
+
+    
+    var previousState = this.stateHistory[this.stateHistory.length - 1];
+
+    
+    this.grid = new Grid(previousState.grid.size, previousState.grid.cells);
+    this.score = previousState.score;
+    this.over = previousState.over;
+    this.won = previousState.won;
+    this.keepPlaying = previousState.keepPlaying;
+
+    this.actuate(); 
+
+    this.undoUsed = true; 
+    var undoButton = document.querySelector(".undo-button");
+    if (undoButton) undoButton.classList.add("disabled");
   }
 };
 
