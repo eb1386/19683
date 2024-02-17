@@ -535,16 +535,16 @@ hr {
 }
 .restart-button {
   display: inline-block;
-  background: #8f7a66;
-  border-radius: 3px;
-  padding: 0 20px;
-  text-decoration: none;
-  color: #f9f6f2;
-  height: 40px;
-  line-height: 42px;
-  text-align: center;
-  font-size: 23.5px;
-  float: right;
+  background: #8f7a66; /* Button background color */
+  border-radius: 3px; /* Rounded corners */
+  padding: 0 20px; /* Padding inside the button */
+  text-decoration: none; /* Remove underline */
+  color: #f9f6f2; /* Text color */
+  height: 40px; /* Button height */
+  line-height: 42px; /* Center the text vertically */
+  text-align: center; /* Center the text horizontally */
+  font-size: 23.5px; /* Text size */
+  float: right; 
 }
  
   .dark-mode-toggle {
