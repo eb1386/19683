@@ -9,16 +9,19 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
+  this.undoUsed = false; 
 
   this.setup();
 }
-this.stateHistory = [];
+this.stateHistory = []; 
 this.undoUsed = false; 
 
 GameManager.prototype.restart = function () {
   this.storageManager.clearGameState();
   this.actuator.continueGame(); 
   this.setup();
+  this.undoUsed = false; 
+  this.updateUndoButtonState(); 
 };
 
 
@@ -194,6 +197,7 @@ GameManager.prototype.move = function (direction) {
     }
 
     this.actuate();
+    this.updateUndoButtonState(); 
   }
 };
 
@@ -222,11 +226,22 @@ GameManager.prototype.undo = function () {
     this.actuate(); 
 
     this.undoUsed = true; 
+    document.querySelector(".undo-button").classList.add("disabled"); 
     var undoButton = document.querySelector(".undo-button");
     if (undoButton) undoButton.classList.add("disabled");
+    this.actuate();
+    this.undoUsed = true; 
+    this.updateUndoButtonState();
   }
 };
-
+GameManager.prototype.updateUndoButtonState = function () {
+  var undoButton = document.querySelector(".undo-button");
+  if (this.undoUsed || this.pastStates.length < 2) {
+    undoButton.classList.add("disabled");
+  } else {
+    undoButton.classList.remove("disabled");
+  }
+};
 
 GameManager.prototype.getVector = function (direction) {
   
