@@ -517,6 +517,7 @@ hr {
   line-height: 42px;
   margin-bottom: 0;
   text-align: center;
+  font-weight: 450;
 }
 
 @media screen and (max-width: 520px) {
