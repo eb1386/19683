@@ -506,7 +506,6 @@ hr {
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
-
 /* Remove the float and use flexbox for better control */
 .above-game {
   display: flex;
@@ -559,13 +558,7 @@ hr {
     padding: 0 10px; 
     font-size: 14px; 
   }
-    .dark-mode-toggle, .undo-button, .restart-button {
-    font-size: 12px; /* Larger font size for better readability */
-    flex-grow: 1;
-  }
 }
-  
-  
 
   
 
@@ -597,23 +590,10 @@ hr {
     margin-bottom: 10px; }
 
   .game-intro {
-    width: 55%;
+    width: 100%;
     display: block;
     box-sizing: border-box;
     line-height: 1.65; }
-
-    restart-button {
-      display: inline-block;
-      background: #8f7a66;
-      border-radius: 3px;
-      padding: 0 20px;
-      text-decoration: none;
-      color: #f9f6f2;
-      height: 40px;
-      line-height: 42px;
-      text-align: center;
-      float: right;
-    }
 
   .game-container {
     margin-top: 17px;
